@@ -1,0 +1,79 @@
+/**
+ * Pagination
+ */
+.pagination {
+    .align-items(center);
+    .display(flex);
+    .justify-content(center);
+    margin-top: -30px;
+
+    @media (max-width: 959px) {
+        margin-top: 3.3rem;
+    }
+
+    li {
+        .align-items(center);
+        .display(flex);
+        .dim(36px, 36px);
+        .font-baloo();
+        .fsize(20px);
+        .justify-content(center);
+        .transition(.3s);
+
+        border-radius: 50%;
+        color: @sec-color;
+        margin: 0 4px;
+
+        &:not(.arrow-next):not(.arrow-prev):hover {
+            background-color: @ter-color;
+            color: #fff;
+        }
+
+        &.active {
+            background-color: @sec-color;
+            color: #fff;
+        }
+
+        &.arrow-next,
+        &.arrow-prev {
+            .dim(40px, 40px);
+            .display(flex);
+            border-radius: 0;
+
+            &.arrow-prev a:before {
+                content: '\f104';
+            }
+            &.arrow-next a:before {
+                content: '\f105';
+            }
+
+            a {
+                .dim(40px, 40px);
+                .transition(.3s);
+
+                border: 2px solid @sec-color;
+                border-radius: 3px;
+                position: relative;
+
+                &:hover {
+                    background-color: @sec-color;
+
+                    &:before {
+                        color: #fff;
+                    }
+                }
+
+                &:before {
+                    .fsize(16px);
+                    .postl(50%, 50%);
+                    .translate(-50%, -50%);
+                    .transition(.3s);
+
+                    color: @sec-color;
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}

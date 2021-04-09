@@ -1,0 +1,212 @@
+#dialog-window{
+    .font-regular();
+    .postl(50%, 50%);
+    position: fixed;
+    max-width: 600px;
+    width: calc(~'100% - 4.6rem');
+    z-index: 5;
+    .opacity(0);
+    visibility: hidden;
+    .translate(-50%, -25%);
+    .transition(visibility 0s linear .3s, transform .3s @o-exponential, opacity .3s @o-exponential);
+    z-index: 9999;
+    .dialog-message{
+        background: #fff;
+        .border-radius(10px 10px 0 0);
+        color: @text-color;
+        padding: 3.5rem;
+        text-align: center;
+        .icon-message{
+            background: @main-color;
+            .border-radius(50%);
+            .dim(7rem,7rem);
+            margin: 0 auto 2rem;
+            padding-top: 1.8rem;
+            .opacity(0);
+            position: relative;
+            .translate(0%, 25%);
+            .transition(transform 0.9s @o-exponential 0.3s, opacity 0.9s @o-exponential 0.3s);
+            svg{
+                .dim(36px,36px);
+                fill: #fff;
+                .postl(50%,50%);
+                .translate(-50%,-50%);
+            }
+            .alert{
+                display: none;
+                svg{
+                    .translate(-50%,-60%);
+                }
+            }
+            .success{
+                display: none;
+            }
+            .error{
+                display: none;
+            }
+        }
+        .title{
+            .fsize(17px);
+            .font-bold();
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            .opacity(0);
+            .translate(0%, 25%);
+            .transition(transform 0.9s @o-exponential 0.3s, opacity 0.9s @o-exponential 0.3s);
+        }
+        .message{
+            .font-regular();
+            .fsize(17px);
+            .opacity(0);
+            .translate(0%, 25%);
+            .transition(transform 0.9s @o-exponential 0.3s, opacity 0.9s @o-exponential 0.3s);
+        }
+    }
+    .dialog-buttons{
+        .fsize(0);
+        background: @main-color;
+        .border-radius(0 0 10px 10px);
+        .display(flex);
+        .justify-content(center);
+        padding: 4rem 2rem;
+        position: relative;
+        text-align: center;
+        top: -1px;
+        &:before{
+            content: '';
+            .block();
+            .postl(-1px, 50%);
+            .translateX(-50%);
+            .triangle(bottom, 20px,10px, #fff);
+        }
+        button{
+            background: #fff;
+            border: 0;
+            .border-radius(3px);
+            color: @main-color;
+            .fsize(15px);
+            .font-bold();
+            .iblock(top);
+            line-height: 1.6rem;
+            margin-left: .5rem;
+            padding: 1.6rem 0;
+            text-align: center;
+            text-transform: uppercase;
+            .opacity(0);
+            .translate(0%, 25%);
+            width: calc(~'50% - .5rem');
+            .transition(background .2s ease-in-out, transform 0.9s @o-exponential 0.3s, opacity 0.9s @o-exponential 0.3s);
+            &:hover{
+                background: darken(#fff,5%);
+            }
+            &:first-child{
+                margin-left: 0;
+            }
+            &:active{
+                .scale(.98) !important;
+                .transition(background .2s ease-in-out, opacity 0.9s @o-exponential 0.3s);
+            }
+        }
+    }
+    &.alert{
+        .alert{
+            display: block !important;
+        }
+    }
+    &.success{
+        .success{
+            display: block !important;
+        }
+    }
+    &.error{
+        .error{
+            display: block !important;
+        }
+    }
+    #close-dialog{
+        border: 0;
+        background: transparent;
+        .dim(1.8rem,1.8rem);
+        .postr(1rem,1rem);
+        .rotate(45deg);
+        .transition(transform .3s @i-quartic);
+        &:before{
+            content: '';
+            .dim(2px,100%);
+            .block();
+            background: @main-color;
+            .postl(0,50%);
+            margin-left: -.1rem;
+        }
+        &:after{
+            content: '';
+            .dim(100%,2px);
+            .block();
+            background: @main-color;
+            .postl(50%,0);
+            margin-top: -.1rem;
+        }
+        &:hover{
+            .rotate(225deg);
+        }
+    }
+    // &.with-cancel{
+    //     .dialog-message{
+    //         .icon-message{
+    //             .background-image(linear-gradient(to bottom, #f63c0c 0%, #e2310b 100%));
+    //         }
+    //     }
+    //     .dialog-buttons{
+    //         .background-image(linear-gradient(to bottom, #f63c0c 0%, #e2310b 100%));
+    //     }
+    // }
+}
+#dialog-overflow{
+    background: rgba(0,0,0,.62);
+    .dim(100%,100%);
+    .opacity(0);
+    .postl(0,0);
+    position: fixed;
+    visibility: hidden;
+    .transition(visibility 0s linear .5s,opacity 0.4s @o-exponential 0.1s);
+    z-index: 9998;
+}
+body{
+    &.dialog-open{
+        #dialog-window{
+            .opacity(1);
+            visibility: visible;
+            .translate(-50%, -50%);
+            .transition(visibility 0s linear, transform .7s @o-exponential, opacity .7s @o-exponential);
+            .dialog-message{
+                .icon-message{
+                    .opacity(1);
+                    .translate(0%, 0%);
+                    .transition-delay(.1s);
+                }
+                .title{
+                    .opacity(1);
+                    .translate(0%, 0%);
+                    .transition-delay(0.2s);
+                }
+                .message{
+                    .opacity(1);
+                    .translate(0%, 0%);
+                    .transition-delay(0.3s);
+                }
+            }
+            .dialog-buttons{
+                button{
+                    .opacity(1);
+                    .translate(0%, 0%);
+                    .transition-delay(0s, 0.4s, .4s);
+                }
+            }
+        }
+        #dialog-overflow{
+            .opacity(1);
+            visibility: visible;
+            .transition(visibility 0s linear, opacity .7s @o-exponential);
+        }
+    }
+}

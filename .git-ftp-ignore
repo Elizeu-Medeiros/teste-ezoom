@@ -1,0 +1,17 @@
+*.sql
+*.less
+tmp/.*
+test/.*
+node_modules/.*
+dump/.*
+Gruntfile.js
+loja.json
+loja.todo
+opencart.sh
+package.json
+README.md
+install/.*
+frontend/.*
+arke.todo
+.gitignore
+.git-ftp-ignore

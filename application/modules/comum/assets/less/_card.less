@@ -1,0 +1,118 @@
+/**
+ * Card
+ */
+.card {
+    .box-shadow(0 12px 32px rgba(0,0,0,.3));
+    .flex(1);
+
+    background: @ter-color;
+    border-radius: 4px;
+    margin: 0 5px;
+    min-height: 320px;
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-bottom: 118%;
+
+        @media (max-width: 1365px) {
+            padding-bottom: 130%;
+        }
+
+        @media (max-width: 1100px) {
+            padding-bottom: 160%;
+        }
+    }
+
+    .play {
+        .dim(80px, 80px);
+        .postl(50%, 50%);
+        .translate(-50%, -50%);
+
+        fill: @yellow;
+        z-index: 20;
+    }
+
+    &:not(.magnific):after {
+        .dim(100%, 100%);
+        .postl(0, 0);
+
+        background: linear-gradient(75deg, rgba(62,64,149,1) 20%, rgba(37,141,200,0) 80%);
+        content: '';
+        opacity: .93;
+        z-index: 3;
+    }
+
+    .lazyload {
+        .dim(100%, 100%);
+        .postl(0, 0);
+        z-index: 1;
+    }
+
+    &:hover .content {
+        padding-bottom: 60px;
+    }
+
+    .content {
+        .posbl(0, 0);
+        .transition(.3s @io-circular);
+
+        padding: 40px;
+        width: 100%;
+        z-index: 12;
+
+        @media (max-width: 1365px) {
+            padding: 30px;
+        }
+
+        .title {
+            .font-baloo();
+            .fsize(25px);
+            min-height: 5.5rem;
+            color: #fff;
+            line-height: 110%;
+
+            @media (max-width: 1365px) {
+                .fsize(20px);
+            }
+
+            strong {
+                .font-baloo();
+                .fsize(34px);
+
+                display: block;
+                font-weight: 400;
+
+                @media (max-width: 1365px) {
+                    .fsize(28px);
+                }
+            }
+        }
+
+        .subtitle {
+            color: #fff;
+            margin-top: 20px;
+            min-height: 4rem;
+        }
+
+        .common-button {
+            .fsize(12px);
+            border-color: @yellow;
+            color: #fff;
+            height: 40px;
+            margin-top: 30px;
+
+            @media (max-width: 1365px) {
+                .fsize(11px);
+                height: 36px;
+            }
+
+            &:hover {
+                background-color: @yellow;
+                color: @ter-color;
+            }
+        }
+    }
+}

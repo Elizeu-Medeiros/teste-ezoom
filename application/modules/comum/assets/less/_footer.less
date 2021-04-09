@@ -1,0 +1,196 @@
+/**
+ * Footer
+ */
+#footer {
+    background-color: #f2f2f2;
+
+    .sitemap {
+        .display(flex);
+        .justify-content(space-between);
+
+        padding-bottom: 50px;
+        padding-top: 50px;
+
+        @media (max-width: 959px) {
+            display: none;
+        }
+    }
+
+    .box {
+        .display(flex);
+        .flex-direction(column);
+        .fsize(12px);
+
+        .bold {
+            .font-bold();
+            color: @main-color;
+            text-transform: uppercase;
+        }
+
+        .link {
+            .transition(.3s);
+            margin-top: 8px;
+            padding: 4px 0;
+
+            &:hover {
+                color: #333;
+            }
+        }
+
+        a.bold {
+            .transition(.3s);
+            margin-bottom: 8px;
+
+            &:hover {
+                color: @sec-color;
+            }
+        }
+
+        .common-button.with-icon {
+            .fsize(10px);
+            .justify-content(center);
+
+            height: 38px;
+            position: relative;
+
+            &:not(:first-child) {
+                margin-top: 8px;
+            }
+
+            @media (min-width: 960px) {
+                &:hover  .submenu {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .submenu {
+                .postr(100%, -2px);
+                .transition(.3s);
+
+                opacity: 0;
+                visibility: hidden;
+                width: 120%;
+                z-index: 10;
+
+                @media (max-width: 959px) {
+                    width: 100%;
+
+                    &.active {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                .submenu-wrap {
+                    .translateY(8px);
+                    background-color: @main-color;
+                    border-radius: 4px;
+                    overflow: hidden;
+                }
+
+                .submenu-a {
+                    .align-items(center);
+                    .display(flex);
+                    .transition(.3s);
+
+                    color: #fff;
+                    line-height: 100%;
+                    min-height: 48px;
+                    padding: 0 20px;
+                    text-align: left;
+
+                    &:hover {
+                        background-color: rgba(0,0,0,.1);
+                    }
+                }
+            }
+        }
+    }
+
+    .murialdo-group {
+        background-color: @main-color;
+        padding: 50px;
+
+        @media (max-width: 1250px) {
+            padding: 50px 20px;
+        }
+    }
+
+    .bottom {
+        background-color: #fff;
+        padding: 50px 0;
+
+        .common-limiter {
+            .align-items(center);
+            .display(flex);
+            .justify-content(space-between);
+
+            @media (max-width: 1250px) {
+                .flex-wrap(wrap);
+            }
+
+            @media (max-width: 1100px) {
+                .justify-content(center);
+            }
+
+            @media (max-width: 959px) {
+                .flex-direction(column);
+            }
+
+            .logo {
+                width: 200px;
+
+                @media (max-width: 1250px) {
+                    .flex(0 0 100%);
+                    text-align: center;
+                }
+
+                img {
+                    width: 100%;
+
+                    @media (max-width: 1250px) {
+                        width: 200px;
+                    }
+                }
+            }
+
+            .link {
+                .font-bold();
+                color: @main-color;
+                margin: 0;
+            }
+
+            .box {
+                .fsize(13px);
+                max-width: 255px;
+
+                @media (max-width: 1100px) {
+                    .display(flex);
+                    .flex(0 0 33.33%);
+                    .justify-content(center);
+
+                    margin-top: 16px;
+                    text-align: center;
+
+                    .socials {
+                        .justify-content(center);
+                    }
+
+                    .ezoom {
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            .ezoom {
+                width: 72px;
+
+                svg {
+                    fill: @main-color;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

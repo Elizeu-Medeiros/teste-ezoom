@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ezoom Framework\n"
+"POT-Creation-Date: 2016-07-26 19:07-0300\n"
+"PO-Revision-Date: 2016-07-26 19:08-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: T_;T_ngettext\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: core/MY_Controller.php:164
+msgid ""
+"Desculpe, ocorreu um problema inesperado. Confira os campos preenchidos no "
+"formulário e tente novamente."
+msgstr ""
+"Lo sentimos, hubo un problema inesperado. Compruebe hacia fuera los campos "
+"llenados en el formulario y vuelva a intentarlo."
+
+#: core/MY_Controller.php:165
+msgid "Ocorreu um erro"
+msgstr "Ha ocurrido un error."
+
+#: core/MY_Controller.php:166
+msgid "Fechar"
+msgstr "Cerrar"
