@@ -33,7 +33,7 @@
             <div class="info">
                 <a href="tel:+55<?php echo preg_replace('/\D/', '', $unit->phone); ?>" title="<?php echo $unit->phone; ?>"><?php echo $unit->phone; ?></a>
                 <a href="mailto:<?php echo $unit->email; ?>" title="<?php echo $unit->email; ?>"><?php echo $unit->email; ?></a>
-                <a href="<?php echo site_url($unit->slug); ?>">
+                <a href="<?php echo site_url('unidade/'.$unit->slug); ?>">
                     <button type="button" class="common-button"><?php echo T_('Acessar site'); ?></button>
                 </a>
             </div>
