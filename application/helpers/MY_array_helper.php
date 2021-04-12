@@ -90,7 +90,7 @@ if (! function_exists('array_order_by')) {
         }
     }
 
-    public function array_order_by($array = array(), $key = 'order_by', $sort = SORT_ASC)
+    public function array_order_by(&$array = array(), $key = 'order_by', $sort = SORT_ASC)
     {
         $sort = new _array_order_by($array, $key, $sort);
     }
