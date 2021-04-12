@@ -47,7 +47,7 @@
 $active_group = (ENVIRONMENT === 'development') ? 'default' : 'production';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'mysql';
+$db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
 $db['default']['database'] = 'murialdo-matriculas';
